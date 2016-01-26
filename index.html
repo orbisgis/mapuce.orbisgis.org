@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>	
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="description" content="Cartes du projet ANR MAPUCE ">
+        <meta name="author" content="Erwan Bocher">
+        <title>Cartes du projet ANR MAPUCE</title>
+        
+        <link rel="stylesheet" href="http://simonwhitaker.github.io/github-fork-ribbon-css/gh-fork-ribbon.css" />
+        <!--[if IE]>
+        <link rel="stylesheet" href="http://simonwhitaker.github.io/github-fork-ribbon-css/gh-fork-ribbon.ie.css" />
+        <![endif]-->
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css">
+	<link rel="stylesheet" href="leaflet/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.css">
+        <link href="leaflet/leaflet-sidebar/L.Control.Sidebar.css" rel="stylesheet" type="text/css">
+        <link href="css/main.css" rel="stylesheet" type="text/css">
+
+
+        <link rel="apple-touch-icon" href="img/favicon-152.png">
+        <link rel="shortcut icon" sizes="196x196" href="img/favicon-196.png">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div class="github-fork-ribbon-wrapper left-bottom">
+<div class="github-fork-ribbon">
+<a href="http://www.cnrm.meteo.fr/spip.php?article787" target="blank" title="Consulter le site du projet MApUCE">Site de démonstration</a>
+</div>
+</div>
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">MApUCE</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group has-feedback navbar-right">
+                        <input id="searchbox" type="text" placeholder="Rechercher une adresse" class="form-control">
+                        <span id="searchicon" class="fa fa-search form-control-feedback"></span>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav">
+                     <!--<li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="sidebar.toggle();
+                            return false;"><i class="fa fa-list" style="color: white"></i>&nbsp;&nbsp;Scenarios de modélisation</a></li>-->
+                    <li class="dropdown">
+                        <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe" style="color: white"></i>&nbsp;&nbsp;Outils <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="map.fitBounds(bounds);
+                                    return false;"><i class="fa fa-arrows-alt"></i>&nbsp;&nbsp;Zoom général</a></li>
+                            <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="javascript:toggleDiv('legendBar');"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Afficher la légende</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#aboutModal').modal('show');
+                            return false;"><i class="fa fa-question-circle" style="color: white"></i>&nbsp;&nbsp;A propos</a></li>
+
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div>
+
+        <!-- Manage legend frame -->	
+        <div id="legendBar">
+        </div>
+
+        
+        <div id="map"></div>
+	<!-- This sidebar will populated with a list of communes -->
+        <div id="sidebar">           
+            
+        </div>
+
+        <div id="aboutModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <a href="http://www.cnrm.meteo.fr/spip.php?article787"><img src="img/Logo_Mapuce_V2_small.png" width="60" alt="CartoPOLIS" style="float: right; margin: 60px 0 0 20px;" /></a>            
+                        <h4 class="modal-title">A propos des cartes du projet MApUCE</h4>
+                    </div>
+                    <div class="modal-body">
+                        <ul id="aboutTabs" class="nav nav-tabs">
+                            <li class="active"><a href="#about" data-toggle="tab"><i class="fa fa-question-circle"></i>&nbsp;Contexte</a></li>
+                            <li><a href="#data" data-toggle="tab"><i class="fa fa-envelope"></i>&nbsp;Données</a></li>
+                            <li><a href="#biblio" data-toggle="tab"><i class="fa fa-envelope"></i>&nbsp;Bibliographie</a></li>
+                            <li><a href="#thanks" data-toggle="tab"><i class="fa fa-envelope"></i>&nbsp;Remerciements</a></li>                            
+                            <li><a href="#contact" data-toggle="tab"><i class="fa fa-envelope"></i>&nbsp;Contact</a></li>
+                            <li><a href="#disclaimer" data-toggle="tab"><i class="fa fa-exclamation-circle"></i>&nbsp;Mention légale</a></li>                            
+                        </ul>
+                        <!-- Here we add the content for each tabs -->
+                        <div id="aboutTabsContent" class="tab-content" style="padding-top: 10px;">
+                            <div class="tab-pane fade active in" id="about">                                
+                                <p>Les cartes présentées dans ce visualiseur sont issues de travaux de recherche réalisés dans le cadre de l'ANR <a href="http://www.cnrm.meteo.fr/spip.php?article787" target="blank" title="MApUCE"><u>MApUCE</u>.</a></p>
+                                <p>En construction...</p>                         
+                                <p><strong>En savoir plus:</strong> Visitez <a href="http://www.cnrm.meteo.fr/spip.php?article787" target="blank" title="Eval-PDU"><u>la page de synthèse du programme de recherche MApUCE</u>.</a></p>
+                            </div>
+                            <div class="tab-pane fade" id="data">
+                                <p>En construction...</p>   
+                            </div>
+                            <div class="tab-pane fade" id="biblio">
+                                <p>En construction...</p>
+                            </div>
+
+                            <div class="tab-pane fade" id="thanks">
+                                <p> Les auteurs remercient l'<a href="http://www.agence-nationale-recherche.fr/" target="blank" title="ANR">Agence Nationale de la Recherche</a>.</p>
+                            </div>
+                            <div class="tab-pane fade text-danger" id="disclaimer">
+                                <p>Les cartes présentées sont le fruit de calculs scientifiques.
+                                    II n'est reconnu aucune valeur juridique particulière au contenu des données mises à disposition.
+                                <p> Les auteurs déclinent toute responsabilité concernant l'interprétation qui pourrait en être faite.</p>
+                                <br>
+                                <p>Le visualiseur de cartes est basé sur le projet BootLeaf. Ce projet distribué sous la licence open source, MIT licensed et disponible à l'adresse <a href="https://github.com/bmcbride/bootleaf" target="_blank">GitHub</a>.</p>
+                                <p>BootLeaf est un framework composé des applications  <a href="http://getbootstrap.com/">Bootstrap 3</a>, 
+                                    <a href="http://leafletjs.com/" target="_blank">Leaflet</a>, 
+                                    et <a href="http://twitter.github.io/typeahead.js/" target="_blank">typeahead.js</a>.</p>                                
+                            </div>
+                            <div class="tab-pane fade" id="contact">
+                                <form id="contact-form">
+                                    <div class="well well-sm">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="last-name">Nom:</label>
+                                                    <input type="text" class="form-control" id="last-email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="first-name">Prénom:</label>
+                                                    <input type="text" class="form-control" id="first-name">
+                                                </div>                                                
+                                                <div class="form-group">
+                                                    <label for="email">Email:</label>
+                                                    <input type="text" class="form-control" id="email">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <label for="message">Message:</label>
+                                                <textarea class="form-control" rows="8" id="message"></textarea>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <p>
+                                                    <button type="submit" class="btn btn-primary pull-right" data-dismiss="modal">Envoyer</button>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </form>
+                            </div>                            
+                        </div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <!-- Show hide the legend frame -->
+        <script type="text/javascript">
+            function toggleDiv(divId) {
+                $("#" + divId).fadeToggle('slow');
+            }
+        </script>
+
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.5/typeahead.bundle.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+  
+        <script type="text/javascript" src="leaflet/leaflet-sidebar/L.Control.Sidebar.js"></script>
+        <!--Plugin groupedlayer-->
+        <script type="text/javascript" src="leaflet/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.js"></script>
+
+	<!--The map-->
+        <script type="text/javascript" src="maps/mapuce_map_config.js"></script>       
+
+    </body>
+</html>

@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+                                                                                
+"features": [
+{ "type": "Feature", "id": 0, "properties": { "NAME": "Lab-STICC DECIDE", "TEL": "+3329762649", "URL": "http:\/\/www.labsticc.fr", 
+"ADDRESS1": "Equipe DECIDE UNIVERSITÉ DE BRETAGNE-SUD Institut Universitaire de Technologie de Vannes - 8, Rue Montaigne - BP 561, 56017 Vannes Cedex" }, "geometry": { "type": "Point", "coordinates": [ -2.7768, 47.6437 ] } }
+]
+}
