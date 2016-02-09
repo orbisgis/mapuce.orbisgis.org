@@ -3,6 +3,40 @@
                                                                                 
 "features": [
 { "type": "Feature", "id": 0, "properties": { "NAME": "Lab-STICC DECIDE", "TEL": "+3329762649", "URL": "http:\/\/www.labsticc.fr", 
-"ADDRESS1": "Equipe DECIDE UNIVERSITÉ DE BRETAGNE-SUD Institut Universitaire de Technologie de Vannes - 8, Rue Montaigne - BP 561, 56017 Vannes Cedex" }, "geometry": { "type": "Point", "coordinates": [ -2.7768, 47.6437 ] } }
+"ADDRESS1": "Equipe DECIDE Université de Bretagne-Sud - Institut Universitaire de Technologie de Vannes - 8, Rue Montaigne - BP 561, 56017 Vannes Cedex" }, "geometry": { "type": "Point", "coordinates": [ -2.7768, 47.6437 ] } },
+{ "type": "Feature", "id": 1, "properties": { "NAME": "CNRM", "TEL": "-","URL": "http:\/\/www.cnrm.meteo.fr/", 
+"ADDRESS1": "42, avenue Coriolis 31057 Toulouse Cedex" }, "geometry": { "type": "Point", "coordinates": [ 1.3723, 43.5751 ] } },
+{ "type": "Feature", "id": 2, "properties": { "NAME": "LISST - UMR 5193", "TEL": "-", "URL": "http:\/\/w3.lisst.univ-tlse2.fr/", 
+"ADDRESS1": "5, allées Antonio-Machado 31058 Toulouse Cedex 9" }, "geometry": { "type": "Point", "coordinates": [ 1.4010, 43.5795 ] } },
+{ "type": "Feature", "id": 3, "properties": { "NAME": "LRA", "TEL": "-", "URL": "http:\/\/lra.toulouse.archi.fr//", 
+"ADDRESS1": "214, route de Saint-Simon 31100 Toulouse" }, "geometry": { "type": "Point", "coordinates": [ 1.3918, 43.5793 ] } },
+{ "type": "Feature", "id": 4, "properties": { "NAME": "LIEU", "TEL": "-", "URL": "http:\/\/iuar-lieu-amu.fr//", 
+"ADDRESS1": "3, avenue Robert Schumann, 13628 Aix-en-Provence" }, "geometry": { "type": "Point", "coordinates": [ 5.4454, 43.5191 ] } },
+{ "type": "Feature", "id": 5, "properties": { "NAME": "LATTS", "TEL": "-", "URL": "http:\/\/www.enpc.fr/laboratoire-techniques-territoires-et-societes/", "ADDRESS1": "6-8 avenue Blaise-Pascal - Cité Descartes - Champs-sur-Marne, 77455 Marne-la-Vallée" }, "geometry": { "type": "Point", "coordinates": [ 2.5855, 48.8405 ] } },
+{ "type": "Feature", "id": 6, "properties": { "NAME": "LIENSs", "TEL": "-", "URL": "http:\/\/lienss.univ-larochelle.fr//", 
+"ADDRESS1": "2, rue Olympe de Gouges, 17000 La Rochelle" }, "geometry": { "type": "Point", "coordinates": [ -1.1597, 46.1427 ] } },
+{ "type": "Feature", "id": 1, "properties": { "NAME": "FNAU", "TEL": "-", "URL": "http:\/\/fnau.org/index.asp/", 
+"ADDRESS1": "22, rue Joubert, 75009 Paris" }, "geometry": { "type": "Point", "coordinates": [ 2.3277, 48.8750 ] } }
 ]
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
