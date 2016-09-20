@@ -101,19 +101,29 @@ var usr_dash = L.tileLayer.wms("http://geoserver.orbisgis.org/geoserver/mapuce/w
 
 map.addLayer(usr_dash);
 
-// LDEN pour les bâtiments
-var groupedLDENBat = {
+var blocks_h_mean = L.tileLayer.wms("http://geoserver.orbisgis.org/geoserver/mapuce/wms", {
+    layers: 'mapuce:block_indicators_metropole',
+    format: 'image/png',
+    transparent: true,
+    version: '1.3.0'
+});
+
+map.addLayer(blocks_h_mean);
+
+// Groupes de couches
+var groupedLayers = {
     "Zones d'étude": {
         "Unités urbaines": unites_urbaines
     },
     "Unités spatiales": {
-        "Ilôts urbains": usr_dash
+        "Ilôts urbains": usr_dash,
+	"Blocs de bâtiments": blocks_h_mean
     }
 };
 
 
 //Load the group layers plugin
-var layerControl = L.control.groupedLayers(baseLayers, groupedLDENBat);
+var layerControl = L.control.groupedLayers(baseLayers, groupedLayers);
 map.addControl(layerControl);
 
 
@@ -123,7 +133,7 @@ var sidebar = L.control.sidebar("sidebar", {
 }).addTo(map);
 
 
-//Create a legend for noise map
+//Create a legend for urban areas
 legend1 = function() {
     var div = L.DomUtil.create('div', 'info legend'), labels = ["<h6>Unités urbaines</h6>"];
     div.innerHTML = labels.join('');
@@ -131,7 +141,7 @@ legend1 = function() {
     return div;
 };
 
-//Create a legend for noise map
+//Create a legend for urban islets
 legend2 = function() {
     var div = L.DomUtil.create('div', 'info legend'), labels = ["<h6>Ilôts urbains</h6>"];
     ;
@@ -139,6 +149,8 @@ legend2 = function() {
     div.innerHTML += '<img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:usr_lienss&STYLE=mapuce:usr_dashstroke" alt="legend" width="20" height="20">';
     return div;
 };
+
+
 
 //Add the legends to the legend frame
 $("#legendBar").html(legend1);
