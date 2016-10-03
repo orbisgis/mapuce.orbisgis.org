@@ -110,10 +110,20 @@ var blocks_h_mean = L.tileLayer.wms("http://geoserver.orbisgis.org/geoserver/map
 
 map.addLayer(blocks_h_mean);
 
+var unites_processed = L.tileLayer.wms("http://geoserver.orbisgis.org/geoserver/mapuce/wms", {
+    layers: 'mapuce:urban_areas_status',
+    format: 'image/png',
+    transparent: true,
+    version: '1.3.0'
+});
+
+map.addLayer(unites_processed);
+
 // Groupes de couches
 var groupedLayers = {
     "Zones d'étude": {
-        "Unités urbaines": unites_urbaines
+        "Unités urbaines": unites_urbaines,
+	"Zones traitées": unites_processed
     },
     "Unités spatiales": {
         "Ilôts urbains": usr_dash,
