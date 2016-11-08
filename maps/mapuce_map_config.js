@@ -119,6 +119,16 @@ var unites_processed = L.tileLayer.wms("http://geoserver.orbisgis.org/geoserver/
 
 map.addLayer(unites_processed);
 
+var typo_usr = L.tileLayer.wms("http://geoserver.orbisgis.org/geoserver/mapuce/wms", {
+    layers: 'mapuce:typo_usr_geom',
+    format: 'image/png',
+    styles: 'typo_usr',
+    transparent: true,
+    version: '1.3.0'
+});
+
+map.addLayer(typo_usr);
+
 // Groupes de couches
 var groupedLayers = {
     "Zones d'étude": {
@@ -128,7 +138,11 @@ var groupedLayers = {
     "Unités spatiales": {
         "Ilôts urbains": usr_dash,
 	"Blocs de bâtiments": blocks_h_mean
-    }
+    },
+
+	"Typologies": {
+        "Par ilôts urbains ": typo_usr
+    }	,
 };
 
 
@@ -160,11 +174,21 @@ legend2 = function() {
     return div;
 };
 
+//Create a legend for urban islet typologies
+legend3 = function() {
+    var div = L.DomUtil.create('div', 'info legend'), labels = ["<h6>Typologie</h6>"];
+    ;
+    div.innerHTML = labels.join('');
+    div.innerHTML += '<img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:typo_usr_geom&STYLE=mapuce:typo_usr" alt="legend" >';
+    return div;
+};
+
 
 
 //Add the legends to the legend frame
 $("#legendBar").html(legend1);
 $("#legendBar").append(legend2);
+$("#legendBar").append(legend3);
 
 
 // Highlight search box text on click
