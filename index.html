@@ -53,7 +53,6 @@
                         <ul class="dropdown-menu">
                             <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="map.fitBounds(bounds);
                                     return false;"><i class="fa fa-arrows-alt"></i>&nbsp;&nbsp;Zoom général</a></li>
-                            <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="javascript:toggleDiv('legendBar');"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Afficher la légende</a></li>
                         </ul>
                     </li>
                     <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#aboutModal').modal('show');
@@ -61,10 +60,6 @@
 
                 </ul>
             </div><!--/.navbar-collapse -->
-        </div>
-
-        <!-- Manage legend frame -->	
-        <div id="legendBar">
         </div>
 
         
@@ -154,13 +149,6 @@
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
-
-        <!-- Show hide the legend frame -->
-        <script type="text/javascript">
-            function toggleDiv(divId) {
-                $("#" + divId).fadeToggle('slow');
-            }
-        </script>
 
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
