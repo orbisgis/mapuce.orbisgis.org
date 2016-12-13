@@ -101,15 +101,6 @@ var usr_dash = L.tileLayer.wms("http://geoserver.orbisgis.org/geoserver/mapuce/w
 
 map.addLayer(usr_dash);
 
-var blocks_h_mean = L.tileLayer.wms("http://geoserver.orbisgis.org/geoserver/mapuce/wms", {
-    layers: 'mapuce:block_indicators_metropole',
-    format: 'image/png',
-    transparent: true,
-    version: '1.3.0'
-});
-
-map.addLayer(blocks_h_mean);
-
 var unites_processed = L.tileLayer.wms("http://geoserver.orbisgis.org/geoserver/mapuce/wms", {
     layers: 'mapuce:urban_areas_status',
     format: 'image/png',
@@ -132,16 +123,14 @@ map.addLayer(typo_usr);
 // Groupes de couches
 var groupedLayers = {
     "Zones d'étude": {
-        "Unités urbaines": unites_urbaines,
-	"Zones traitées": unites_processed
+        '<img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:unites_urbaines&STYLE=mapuce:unites_urbaines" /> Unités urbaines': unites_urbaines,
+	'<img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:urban_areas_status&STYLE=mapuce:unites_urbaines_processed" /> Unités urbaines traitées': unites_processed
     },
     "Unités spatiales": {
-        "Ilôts urbains": usr_dash,
-	"Blocs de bâtiments": blocks_h_mean
+        '<img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:usr_lienss&STYLE=mapuce:usr_dashstroke" /> Ilôts urbains': usr_dash
     },
-
 	"Typologies": {
-        "Par ilôts urbains ": typo_usr
+        'Par ilôts urbains  <br><img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:typo_usr_geom&STYLE=mapuce:typo_usr" /> ': typo_usr
     }	,
 };
 
@@ -157,38 +146,6 @@ var sidebar = L.control.sidebar("sidebar", {
 }).addTo(map);
 
 
-//Create a legend for urban areas
-legend1 = function() {
-    var div = L.DomUtil.create('div', 'info legend'), labels = ["<h6>Unités urbaines</h6>"];
-    div.innerHTML = labels.join('');
-    div.innerHTML += '<img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:unites_urbaines&STYLE=mapuce:unites_urbaines" alt="legend" width="20" height="20">';
-    return div;
-};
-
-//Create a legend for urban islets
-legend2 = function() {
-    var div = L.DomUtil.create('div', 'info legend'), labels = ["<h6>Ilôts urbains</h6>"];
-    ;
-    div.innerHTML = labels.join('');
-    div.innerHTML += '<img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:usr_lienss&STYLE=mapuce:usr_dashstroke" alt="legend" width="20" height="20">';
-    return div;
-};
-
-//Create a legend for urban islet typologies
-legend3 = function() {
-    var div = L.DomUtil.create('div', 'info legend'), labels = ["<h6>Typologie</h6>"];
-    ;
-    div.innerHTML = labels.join('');
-    div.innerHTML += '<img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:typo_usr_geom&STYLE=mapuce:typo_usr" alt="legend" >';
-    return div;
-};
-
-
-
-//Add the legends to the legend frame
-$("#legendBar").html(legend1);
-$("#legendBar").append(legend2);
-$("#legendBar").append(legend3);
 
 
 // Highlight search box text on click
@@ -305,19 +262,12 @@ $(document).one("ajaxStop", function() {
     $(".twitter-typeahead").css("display", "block");
 });
 
-// Placeholder hack for IE
-if (navigator.appName == "Microsoft Internet Explorer") {
-    $("input").each(function() {
-        if ($(this).val() == "" && $(this).attr("placeholder") != "") {
-            $(this).val($(this).attr("placeholder"));
-            $(this).focus(function() {
-                if ($(this).val() == $(this).attr("placeholder"))
-                    $(this).val("");
-            });
-            $(this).blur(function() {
-                if ($(this).val() == "")
-                    $(this).val($(this).attr("placeholder"));
-            });
-        }
-    });
+// Leaflet patch to make layer control scrollable on touch browsers
+var container = $(".leaflet-control-layers")[0];
+if (!L.Browser.touch) {
+  L.DomEvent
+  .disableClickPropagation(container)
+  .disableScrollPropagation(container);
+} else {
+  L.DomEvent.disableClickPropagation(container);
 }
