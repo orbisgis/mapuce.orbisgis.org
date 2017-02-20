@@ -110,6 +110,32 @@ var unites_processed = L.tileLayer.wms("http://geoserver.orbisgis.org/geoserver/
 
 map.addLayer(unites_processed);
 
+
+var usr_build_dens = L.tileLayer.wms("http://geoserver.orbisgis.org/geoserver/mapuce/wms", {
+    layers: 'mapuce:usr_indicators_metropole_geom',
+    format: 'image/png',
+    styles: 'usr_build_dens',
+    transparent: true,
+    version: '1.3.0'
+});
+
+
+var usr_floor_ratio = L.tileLayer.wms("http://geoserver.orbisgis.org/geoserver/mapuce/wms", {
+    layers: 'mapuce:usr_indicators_metropole_geom',
+    format: 'image/png',
+    styles: 'usr_floor_ratio',
+    transparent: true,
+    version: '1.3.0'
+});
+
+var usr_h_mean = L.tileLayer.wms("http://geoserver.orbisgis.org/geoserver/mapuce/wms", {
+    layers: 'mapuce:usr_indicators_metropole_geom',
+    format: 'image/png',
+    styles: 'usr_h_mean',
+    transparent: true,
+    version: '1.3.0'
+});
+
 var typo_usr = L.tileLayer.wms("http://geoserver.orbisgis.org/geoserver/mapuce/wms", {
     layers: 'mapuce:typo_usr_geom',
     format: 'image/png',
@@ -126,10 +152,13 @@ var groupedLayers = {
         '<img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:unites_urbaines&STYLE=mapuce:unites_urbaines" /> Unités urbaines': unites_urbaines,
 	'<img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:urban_areas_status&STYLE=mapuce:unites_urbaines_processed" /> Unités urbaines traitées': unites_processed
     },
-    "Unités spatiales": {
+    "Unités spatiales de référence (USR)": {
         '<img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:usr_lienss&STYLE=mapuce:usr_dashstroke" /> Ilôts urbains': usr_dash
     },
-	"Typologies": {
+    "Indicateurs par USR":{'Densité de bâtiments <br><img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:usr_indicators_metropole_geom&STYLE=mapuce:usr_build_dens" />' : usr_build_dens,
+		'Ratio de surface de plancher <br><img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:usr_indicators_metropole_geom&STYLE=mapuce:usr_floor_ratio" />' : usr_floor_ratio,
+		'Hauteur moyenne des bâtiments <br><img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:usr_indicators_metropole_geom&STYLE=mapuce:usr_h_mean" />' : usr_h_mean},
+	"Typologies par USR": {
         'Par ilôts urbains  <br><img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:typo_usr_geom&STYLE=mapuce:typo_usr" /> ': typo_usr
     }	,
 };
