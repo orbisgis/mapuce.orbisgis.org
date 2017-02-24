@@ -170,13 +170,17 @@ var layerControl = L.control.groupedLayers(baseLayers, groupedLayers);
 map.addControl(layerControl);
 
 
-var sidebar = L.control.sidebar("sidebar", {
-    closeButton: true,
-    position: "left"
-}).addTo(map);
 
 
-
+L.control.coordinates().addTo(map);
+		//add configured controls
+		L.control.coordinates({
+			position:"bottomleft",
+			decimals:2,
+			decimalSeperator:",",
+			labelTemplateLat:"Latitude: {y}",
+			labelTemplateLng:"Longitude: {x}"
+		}).addTo(map);
 
 // Highlight search box text on click
 $("#searchbox").click(function() {
