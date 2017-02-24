@@ -156,10 +156,10 @@ var groupedLayers = {
     "Unités spatiales de référence (USR)": {
         '<img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:usr_lienss&STYLE=mapuce:usr_dashstroke" /> Ilôts urbains': usr_dash
     },
-    "Indicateurs par USR":{'Densité de bâtiments <br><img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:usr_indicators_metropole_geom&STYLE=mapuce:usr_build_dens" />' : usr_build_dens,
-		'Ratio de surface de plancher <br><img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:usr_indicators_metropole_geom&STYLE=mapuce:usr_floor_ratio" />' : usr_floor_ratio,
-		'Hauteur moyenne des bâtiments <br><img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:usr_indicators_metropole_geom&STYLE=mapuce:usr_h_mean" />' : usr_h_mean},
-	"Typologies par USR": {
+    "Indicateurs par USR":{'Densité de bâtiments (en %) <br><img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:usr_indicators_metropole_geom&STYLE=mapuce:usr_build_dens" />' : usr_build_dens,
+		'Pourcentage de surface de plancher <br><img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:usr_indicators_metropole_geom&STYLE=mapuce:usr_floor_ratio" />' : usr_floor_ratio,
+		'Hauteur moyenne des bâtiments (en m) <br><img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:usr_indicators_metropole_geom&STYLE=mapuce:usr_h_mean" />' : usr_h_mean},
+	"Typologies": {
         'Par ilôts urbains  <br><img src="http://geoserver.orbisgis.org/geoserver/mapuce/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=mapuce:typo_usr_geom&STYLE=mapuce:typo_usr" /> ': typo_usr
     }	,
 };
