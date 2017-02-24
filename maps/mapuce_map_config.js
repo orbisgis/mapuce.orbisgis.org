@@ -63,9 +63,9 @@ var basemap =  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
   });
 
-//var cloudmadeUrl = 'http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png';
-//var basemap = L.tileLayer(cloudmadeUrl, {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', maxZoom: 18});
-
+var esriworldimagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+});
 
 
 map = L.map("map", {
@@ -76,7 +76,8 @@ map = L.map("map", {
 
 //Create a custom group of layers
 var baseLayers = {
-    "Fond de carte": basemap
+    "Fond OSM": basemap,
+    "Images satellites": esriworldimagery
 };
 
 //Add some layers delivered with geoserver
