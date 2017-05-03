@@ -1,63 +1,100 @@
-                     <ul id="aboutTabs" class="nav nav-tabs">
-                            <li class="active"><a href="#about" data-toggle="tab"><i class="fa fa-question-circle"></i>&nbsp;Contexte</a></li>
-                            <li><a href="#data" data-toggle="tab"><i class="fa fa-envelope"></i>&nbsp;Données</a></li>
-                            <li><a href="#biblio" data-toggle="tab"><i class="fa fa-envelope"></i>&nbsp;Bibliographie</a></li>
-                            <li><a href="#thanks" data-toggle="tab"><i class="fa fa-envelope"></i>&nbsp;Remerciements</a></li>                       
-                            
-                            <li><a href="#disclaimer" data-toggle="tab"><i class="fa fa-exclamation-circle"></i>&nbsp;Mention légale</a></li>                            
-                        </ul>
-                        <!-- Here we add the content for each tabs -->
-                        <div id="aboutTabsContent" class="tab-content" style="padding-top: 10px;">
-                            <div class="tab-pane fade active in" id="about">                                
-                                <p>Les cartes présentées dans ce visualiseur sont issues de travaux de recherche réalisés dans le cadre de l'ANR <a href="http://www.cnrm.meteo.fr/spip.php?article787" target="blank" title="MApUCE"><u>MApUCE</u>.</a></p>
-                                <p>Ce démonstrateur développé par le groupe SIG de l'équipe DECIDE du Lab-STICC est en cours de construction.</p>                         
-                                <p><strong>En savoir plus:</strong> Visitez <a href="http://www.cnrm.meteo.fr/spip.php?article787" target="blank" title="Eval-PDU"><u>la page de synthèse du programme de recherche MApUCE</u>.</a></p>
-                            </div>
-                            <div class="tab-pane fade" id="data">
-                                <p>En construction...</p>   
-                            </div>
-                            <div class="tab-pane fade" id="biblio">
-                                <p>En construction...</p>
-                            </div>
+<ul id="aboutTabs" class="nav nav-tabs">
+        <li class="active"><a href="#about" data-toggle="tab"><i class="fa fa-question-circle"></i>&nbsp;Contexte</a></li>
+        <li><a href="#definitions" data-toggle="tab"><i class="fa fa-envelope"></i>&nbsp;Définitions</a></li>
+        <li><a href="#biblio" data-toggle="tab"><i class="fa fa-envelope"></i>&nbsp;Bibliographie</a></li>
+        <li><a href="#thanks" data-toggle="tab"><i class="fa fa-envelope"></i>&nbsp;Remerciements</a></li>                                      
+        <li><a href="#disclaimer" data-toggle="tab"><i class="fa fa-exclamation-circle"></i>&nbsp;Mention légale</a></li>                            
+</ul>
 
-                            <div class="tab-pane fade" id="thanks">
-                                <p> Les auteurs remercient l'<a href="http://www.agence-nationale-recherche.fr/" target="blank" title="ANR">Agence Nationale de la Recherche</a>.</p>
-                            </div>
-                            <div class="tab-pane fade text-danger" id="disclaimer">
-                                <p>Les cartes présentées sont le fruit de calculs scientifiques.
-                                    II n'est reconnu aucune valeur juridique particulière au contenu des données mises à disposition.
-                                <p> Les auteurs déclinent toute responsabilité concernant l'interprétation qui pourrait en être faite.</p>
-                                <br>
-                                <p>Le visualiseur de cartes est basé sur le projet mviewer de la plateforme régionale GéoBretagne. Ce projet distribué sous la licence open source, GNU GPL 3 et disponible à l'adresse <a href="https://github.com/geobretagne/mviewer" target="_blank">https://github.com/geobretagne/mviewer</a>.</p>                               
-                            </div>
-                            <div class="tab-pane fade" id="contact">
-                                <form id="contact-form">
-                                    <div class="well well-sm">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label for="last-name">Nom:</label>
-                                                    <input type="text" class="form-control" id="last-email">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="first-name">Prénom:</label>
-                                                    <input type="text" class="form-control" id="first-name">
-                                                </div>                                                
-                                                <div class="form-group">
-                                                    <label for="email">Email:</label>
-                                                    <input type="text" class="form-control" id="email">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <label for="message">Message:</label>
-                                                <textarea class="form-control" rows="8" id="message"></textarea>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <p>
-                                                    <button type="submit" class="btn btn-primary pull-right" data-dismiss="modal">Envoyer</button>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>    
-                                </form>
-                            </div>                            
+<!-- Here we add the content for each tabs -->
+<div id="aboutTabsContent" class="tab-content" style="padding-top: 10px;">
+
+    <!-- CONTEXTE ------------------------------------------------------------------------------------------------------------------------------------------ -->                        
+    <div class="tab-pane fade active in" id="about">                                
+            <p>Les cartes présentées dans ce visualiseur sont issues de travaux de recherche réalisés dans le cadre de l'ANR <a href="http://www.cnrm.meteo.fr/spip.php?article787" target="blank" title="MApUCE"><u>MApUCE</u>.</a></p>
+            <p>Ce démonstrateur, développé par le groupe SIG de l'équipe <a href="http://www.lab-sticc.fr/en/teams/m-570-decide.htm" target="blank"><u>DECIDE</u></a> du <a href="http://www.lab-sticc.fr/en/index/" target="blank"><u>Lab-STICC</u></a>, est en cours de construction. De même, les résultats ici présentés sont en cours de calcul. Aussi les cartes sont mises à jour au fur et à mesure.</p>  
+
+            <hr>                       
+            <p><strong>En savoir plus:</strong> Visitez <a href="http://www.cnrm.meteo.fr/spip.php?article787" target="blank" title="Eval-PDU"><u>la page de synthèse du programme de recherche MApUCE</u>.</a></p>
+            <br>
+            <center><a href="http://www.cnrm.meteo.fr/spip.php?article787" target="blank"><img src="img/logo/Logo_Mapuce_V2.png" width="300" alt="MApUCE"/></a></center>
+    </div><!-- class -->
+
+    <!-- DEFINITIONS ------------------------------------------------------------------------------------------------------------------------------------------ -->
+    <div class="tab-pane fade" id="definitions">
+            <p>Ci-dessous sont définis les termes et indicateurs visibles sur cette plateforme et utilisés dans le cadre du projet MApUCE.</p>
+            <b>Termes</b>
+                    <ul>
+                                    <li><u>Ilôt</u> : unité spatiale définie par un ensemble de parcelles qui se touchent et auxquelles ont adjoint les demi-surfaces de routes entourant cet ensemble. <i>Remarque : cet objet est aussi appelé "Unité Spatiale de Référence" : USR</i>,</li>
+                                    <li><u>Bloc</u> : ensemble de bâtiments ayant au moins un point de contact (ou une façade) en commun. Les bâtiments qui se touchent sont alors fusionnés afin de générer une nouvelle "super" géométrie : le bloc.</li>
+                    </ul>
+
+            <hr>
+                                
+            <b>Indicateurs par îlots</b>
+                    <ul>
+                        <li>Surfaces</li>
+                                    <ul>
+                                        <li><u>Pourcentage de surface de bâtiments</u> : Rapport entre la somme des surfaces au sol des bâtiments et la surface de l'îlot,</li>
+                                        <li><u>Pourcentage de surface de plancher</u> : Rapport entre la somme des surfaces de plancher et la surface de l'îlot. La surface de plancher d'un bâtiment est égale à la surface au sol multipliée par le nombre de niveaux du bâtiment,</li>
+                                        <li><u>Pourcentage de surface de végétation</u> : Rapport entre la somme des surfaces de végétation et la surface de l'îlot,</li>
+                                        <li><u>Pourcentage de surface de routes</u> : Rapport entre la somme des surfaces de routes et la surface de l'îlot,</li>
+                                        <li><u>Pourcentage de surface en eau</u> : Rapport entre la somme des surfaces en eau et la surface de l'îlot,</li>
+                                    </ul>
+                        <li>Formes</li>
+                                    <ul>
+                                        <li><u>Hauteur moyenne des bâtiments</u> : Moyenne des hauteurs des bâtiments présents dans l'îlot,</li>
+                                        <li><u>Volume moyen des bâtiments</u> : Moyenne des volumes des bâtiments présents dans l'îlot,</li>
+                                        <li><u>Compacité moyenne des bâtiments</u> : Moyenne des compacité des bâtiments présents dans l'îlot,</li>
+                                        <li><u>Compacité moyenne des blocs</u> : Moyenne des compacités des blocs présents dans l'îlot,</li>                                       
+                                    </ul>
+                        <li>Autres</li>
+                                    <ul>
+                                        <li><u>Nombre de bâtiments</u> : Nombre de bâtiments présents dans l'îlot,</li>
+                                        <li><u>Distance moyenne entre bâtiments</u> : Pour chaque bâtiment, nous calculons la moyenne des distances aux autres bâtiments présents dans l'îlot. Ensuite, nous calculons la moyenne de ces distances moyennes.</li>                                       
+                                    </ul>
+                    </ul>
+
+            <hr>
+
+            <b>Typologies</b>
+                    <ul>
+                        <li><u>Bâtiment majoritaire par ilôts</u> : dans chaque ilôts, les bâtiments sont statistiquement classés sur la base d'une soixantaine d'indicateurs morphologiques (en partie présentés ci-dessus). Cette classification (supervisée, avec la méthode du "Random Forest") permet de faire ressortir les types majoritaire et secondaire de bâti dans l'ilôt. Ici, nous présentons le type majoritaire.</li>
+                    </ul> 
+    </div><!-- class -->
+
+    <!-- BIBLIOGRAPHIE ------------------------------------------------------------------------------------------------------------------------------------------ -->
+    <div class="tab-pane fade" id="biblio">
+            <ul>
+                <li>Erwan Bocher, Gwendall Petit, Nicolas Fortin, Sylvain Palominos. <i>H2GIS a spatial database to feed urban climate issues</i>. 9th International Conference on Urban Climate (<a href="http://www.meteo.fr/icuc9/index.html" target="blank"><u>ICUC9</u></a>), Jul 2015, Toulouse, France. 2015. <a href="https://halshs.archives-ouvertes.fr/halshs-01179756" target="blank">(<u>Référence</u>)</a></li>
+            </ul>
+    </div><!-- class -->
+
+    <!-- REMERCIEMENTS ------------------------------------------------------------------------------------------------------------------------------------------ -->
+    <div class="tab-pane fade" id="thanks">
+            <p>Les auteurs remercient l'<a href="http://www.agence-nationale-recherche.fr/" target="blank" title="ANR"><u>Agence Nationale de la Recherche</u></a>.</p>
+    </div><!-- class -->
+
+    <!-- MENTION LEGALE ------------------------------------------------------------------------------------------------------------------------------------------ -->
+    <div class="tab-pane fade" id="disclaimer">
+            <p><b>Résultats</b></p>
+            <p align="justify">Les cartes ici présentées sont le fruit de calculs scientifiques. II n'est reconnu aucune valeur juridique particulière au contenu des données mises à disposition. Les auteurs déclinent toute responsabilité concernant l'interprétation qui pourrait en être faite.</p>
+
+            <hr>
+            <p><b>Outils</b></p>
+
+            <p align="justify">L'ensemble des outils utilisés pour stocker, traiter et diffuser les données de ce projet est basé sur des licences ouvertes (open-source). Ainsi :</p>
+                <ul>
+                    <li>le visualiseur de cartes est basé sur le projet "MViewer" de la plateforme régionale <a href="https://cms.geobretagne.fr/" target="_blank"><u>GéoBretagne</u></a>. Ce projet distribué sous la licence open source, GNU GPL 3 et disponible à l'adresse <a href="https://github.com/geobretagne/mviewer" target="_blank"><u>https://github.com/geobretagne/mviewer</u></a>.</li>
+                    <li>les indicateurs géographiques ont été produits à l'aide de la base de données spatiale <a href="http://h2gis.org/" target="blank"><u>H2GIS</u></a>, à travers le logiciel SIG <a href="http://orbisgis.org/" target="blank"><u>OrbisGIS</u></a>. Deux logiciels Open-Source développés par le groupe SIG de l'équipe DECIDE.</li>
+                </ul>
+
+            <hr>
+            <p><b>Auteurs & Contact</b></p>
+
+            <p align="justify">Le présent site internet a été mis en oeuvre par Erwan Bocher et Gwendall Petit, membres du groupe SIG de l'équipe <a href="http://www.lab-sticc.fr/en/teams/m-570-decide.htm" target="blank"><u>DECIDE</u></a> du <a href="http://www.lab-sticc.fr/en/index/" target="blank"><u>Lab-STICC</u></a> (CNRS UMR 6285).
+
+            <p align="justify">Pour toutes questions ou demandes d'informations complémentaires, veuillez envoyer un e-mail à "info" <i>arobase</i> "orbisgis.org"</p>
+    </div><!-- class -->
+
+</div><!-- class "tab-pane fade active in" -->
