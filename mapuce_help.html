@@ -1,0 +1,63 @@
+                     <ul id="aboutTabs" class="nav nav-tabs">
+                            <li class="active"><a href="#about" data-toggle="tab"><i class="fa fa-question-circle"></i>&nbsp;Contexte</a></li>
+                            <li><a href="#data" data-toggle="tab"><i class="fa fa-envelope"></i>&nbsp;Données</a></li>
+                            <li><a href="#biblio" data-toggle="tab"><i class="fa fa-envelope"></i>&nbsp;Bibliographie</a></li>
+                            <li><a href="#thanks" data-toggle="tab"><i class="fa fa-envelope"></i>&nbsp;Remerciements</a></li>                       
+                            
+                            <li><a href="#disclaimer" data-toggle="tab"><i class="fa fa-exclamation-circle"></i>&nbsp;Mention légale</a></li>                            
+                        </ul>
+                        <!-- Here we add the content for each tabs -->
+                        <div id="aboutTabsContent" class="tab-content" style="padding-top: 10px;">
+                            <div class="tab-pane fade active in" id="about">                                
+                                <p>Les cartes présentées dans ce visualiseur sont issues de travaux de recherche réalisés dans le cadre de l'ANR <a href="http://www.cnrm.meteo.fr/spip.php?article787" target="blank" title="MApUCE"><u>MApUCE</u>.</a></p>
+                                <p>Ce démonstrateur développé par le groupe SIG de l'équipe DECIDE du Lab-STICC est en cours de construction.</p>                         
+                                <p><strong>En savoir plus:</strong> Visitez <a href="http://www.cnrm.meteo.fr/spip.php?article787" target="blank" title="Eval-PDU"><u>la page de synthèse du programme de recherche MApUCE</u>.</a></p>
+                            </div>
+                            <div class="tab-pane fade" id="data">
+                                <p>En construction...</p>   
+                            </div>
+                            <div class="tab-pane fade" id="biblio">
+                                <p>En construction...</p>
+                            </div>
+
+                            <div class="tab-pane fade" id="thanks">
+                                <p> Les auteurs remercient l'<a href="http://www.agence-nationale-recherche.fr/" target="blank" title="ANR">Agence Nationale de la Recherche</a>.</p>
+                            </div>
+                            <div class="tab-pane fade text-danger" id="disclaimer">
+                                <p>Les cartes présentées sont le fruit de calculs scientifiques.
+                                    II n'est reconnu aucune valeur juridique particulière au contenu des données mises à disposition.
+                                <p> Les auteurs déclinent toute responsabilité concernant l'interprétation qui pourrait en être faite.</p>
+                                <br>
+                                <p>Le visualiseur de cartes est basé sur le projet mviewer de la plateforme régionale GéoBretagne. Ce projet distribué sous la licence open source, GNU GPL 3 et disponible à l'adresse <a href="https://github.com/geobretagne/mviewer" target="_blank">https://github.com/geobretagne/mviewer</a>.</p>                               
+                            </div>
+                            <div class="tab-pane fade" id="contact">
+                                <form id="contact-form">
+                                    <div class="well well-sm">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="last-name">Nom:</label>
+                                                    <input type="text" class="form-control" id="last-email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="first-name">Prénom:</label>
+                                                    <input type="text" class="form-control" id="first-name">
+                                                </div>                                                
+                                                <div class="form-group">
+                                                    <label for="email">Email:</label>
+                                                    <input type="text" class="form-control" id="email">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <label for="message">Message:</label>
+                                                <textarea class="form-control" rows="8" id="message"></textarea>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <p>
+                                                    <button type="submit" class="btn btn-primary pull-right" data-dismiss="modal">Envoyer</button>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </form>
+                            </div>                            
