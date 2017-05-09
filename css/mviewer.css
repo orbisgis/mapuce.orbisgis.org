@@ -119,11 +119,12 @@ a#searchparams {
 }
 
 #searchresults li {
-	padding: 0;
+	padding: 10px;
 }
 
 #searchresults li a {
 	font-size: 11px;
+	margin-left: 5px;
 }
 
 #searchresults li.disabled {
@@ -174,6 +175,13 @@ li.geoportail.list-group-item.disabled{
   bottom: 60px;
   width: auto;
   padding-left: 10px;
+}
+
+#btn-remove-layers {
+    display: none;
+}
+.active #btn-remove-layers {
+    display: inline;
 }
 
 /* Sub-title: nom des styles et des filtres sur attibut */
