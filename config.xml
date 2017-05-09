@@ -24,19 +24,19 @@
     <themes mini="true">  
     	<theme name="Zones d'études"  collapsed="false" id="zones" icon="university"> 
 
-		<layer id="usr_lienss" name="Ilots (USR)"  visible="true" 
+		<layer id="mapuce:usr_lienss" name="Ilots (USR)"  visible="true" 
                 style="usr_dashstroke"
                 url="http://geoserver.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" />
 
-		<layer id="urban_areas_status" name="Communes analysées"  visible="true" 
+		<layer id="mapuce:urban_areas_status" name="Communes analysées"  visible="true" 
                 style=""
                 url="http://geoserver.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" />
 
-		<layer id="unites_urbaines" name="Unités urbaines"  visible="true" 
+		<layer id="mapuce:unites_urbaines" name="Unités urbaines"  visible="true" 
                 style="unites_urbaines"
                 url="http://geoserver.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
@@ -46,31 +46,31 @@
         <theme name="Indicateurs par îlots"  collapsed="false" id="indicateurs" icon="group">   
           	<group name="Surfaces" id="grp1" >
 
-		<layer id="usr_indicators_metropole_geom" name="% de surface de routes"  visible="false" 
+		<layer id="mapuce:usr_indicators_metropole_geom" name="% de surface de routes"  visible="false" 
                 style="usr_road_dens"
                 url="http://geoserver.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" />
 
-		<layer id="usr_indicators_metropole_geom" name="% de surface en eau"  visible="false" 
+		<layer id="mapuce:usr_indicators_metropole_geom" name="% de surface en eau"  visible="false" 
                 style="usr_eau_dens"
                 url="http://geoserver.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" /> 
 
-		<layer id="usr_indicators_metropole_geom" name="% de surface de végétation"  visible="false" 
+		<layer id="mapuce:usr_indicators_metropole_geom" name="% de surface de végétation"  visible="false" 
                 style="usr_veget_dens"
                 url="http://geoserver.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" /> 
 
-		<layer id="usr_indicators_metropole_geom" name="% de surface de plancher"  visible="false" 
+		<layer id="mapuce:usr_indicators_metropole_geom" name="% de surface de plancher"  visible="false" 
                 style="usr_floor_ratio"
                 url="http://geoserver.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" /> 
 
-		<layer id="usr_indicators_metropole_geom" name="% de surface de bâtiments"  visible="false" 
+		<layer id="mapuce:usr_indicators_metropole_geom" name="% de surface de bâtiments"  visible="false" 
                 style="usr_build_dens"
                 url="http://geoserver.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
@@ -80,25 +80,25 @@
 
 		<group name="Formes" id="grp2" >
 
-		<layer id="usr_indicators_metropole_geom" name="Compacité moyenne des blocs"  visible="false" 
+		<layer id="mapuce:usr_indicators_metropole_geom" name="Compacité moyenne des blocs"  visible="false" 
                 style="usr_b_m_w_compacity"
                 url="http://geoserver.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" /> 
 
-		<layer id="usr_indicators_metropole_geom" name="Compacité moyenne des bâtiments"  visible="false" 
+		<layer id="mapuce:usr_indicators_metropole_geom" name="Compacité moyenne des bâtiments"  visible="false" 
                 style="usr_compac_mean_w"
                 url="http://geoserver.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" /> 
 
-		<layer id="usr_indicators_metropole_geom" name="Volume moyen des bâtiments"  visible="false" 
+		<layer id="mapuce:usr_indicators_metropole_geom" name="Volume moyen des bâtiments"  visible="false" 
                 style="usr_b_vol_mean"
                 url="http://geoserver.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" /> 
 
-		<layer id="usr_indicators_metropole_geom" name="Hauteur moyenne des bâtiments"  visible="false" 
+		<layer id="mapuce:usr_indicators_metropole_geom" name="Hauteur moyenne des bâtiments"  visible="false" 
                 style="usr_h_mean"
                 url="http://geoserver.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
@@ -108,13 +108,13 @@
 
  		<group name="Autres" id="grp3" >	  
 
-		<layer id="usr_indicators_metropole_geom" name="Nombre de bâtiments"  visible="false" 
+		<layer id="mapuce:usr_indicators_metropole_geom" name="Nombre de bâtiments"  visible="false" 
                 style="usr_build_num_prop_point"
                 url="http://geoserver.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" />
 
-		<layer id="usr_indicators_metropole_geom" name="Distance moyenne entre bâtiments"  visible="false" 
+		<layer id="mapuce:usr_indicators_metropole_geom" name="Distance moyenne entre bâtiments"  visible="false" 
                 style="usr_mean_m_dist"
                 url="http://geoserver.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
@@ -123,7 +123,7 @@
             	</group>
         </theme>                    
         <theme name="Typologies"  collapsed="true" id="typologie" icon="group"> 
-          	<layer id="typo_usr_geom" name="Bâtiment majoritaire par îlots"  visible="false" 
+          	<layer id="mapuce:typo_usr_geom" name="Bâtiment majoritaire par îlots"  visible="false" 
                 style="typo_usr"
                 url="http://geoserver.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
