@@ -1,9 +1,10 @@
 <ul id="aboutTabs" class="nav nav-tabs">
         <li class="active"><a href="#about" data-toggle="tab"><i class="fa fa-question-circle"></i>&nbsp;Contexte</a></li>
-        <li><a href="#definitions" data-toggle="tab"><i class="fa fa-envelope"></i>&nbsp;Définitions</a></li>
-        <li><a href="#biblio" data-toggle="tab"><i class="fa fa-envelope"></i>&nbsp;Bibliographie</a></li>
-        <li><a href="#thanks" data-toggle="tab"><i class="fa fa-envelope"></i>&nbsp;Remerciements</a></li>                                      
-        <li><a href="#disclaimer" data-toggle="tab"><i class="fa fa-exclamation-circle"></i>&nbsp;Mention légale</a></li>                            
+        <li><a href="#definitions" data-toggle="tab"><i class="fa fa-font"></i>&nbsp;Définitions</a></li>
+        <li><a href="#data" data-toggle="tab"><i class="fa fa-database"></i>&nbsp;Données</a></li>        
+        <li><a href="#biblio" data-toggle="tab"><i class="fa fa-book"></i>&nbsp;Bibliographie</a></li>
+        <li><a href="#thanks" data-toggle="tab"><i class="fa fa-exclamation-circle"></i>&nbsp;Remerciements</a></li>                                      
+        <li><a href="#disclaimer" data-toggle="tab"><i class="fa fa-envelope"></i>&nbsp;Mention légale</a></li>                            
 </ul>
 
 <!-- Here we add the content for each tabs -->
@@ -11,7 +12,7 @@
 
     <!-- CONTEXTE ------------------------------------------------------------------------------------------------------------------------------------------ -->                        
     <div class="tab-pane fade active in" id="about">                                
-            <p>Les cartes présentées dans ce visualiseur sont issues de travaux de recherche réalisés dans le cadre de l'ANR <a href="http://www.cnrm.meteo.fr/spip.php?article787" target="blank" title="MApUCE"><u>MApUCE</u>.</a></p>
+            <p>Les cartes et les données présentées dans ce visualiseur sont issues de travaux de recherche réalisés dans le cadre de l'ANR <a href="http://www.cnrm.meteo.fr/spip.php?article787" target="blank" title="MApUCE"><u>MApUCE</u>.</a></p>
             <p>Ce démonstrateur, développé par le groupe SIG de l'équipe <a href="http://www.lab-sticc.fr/en/teams/m-570-decide.htm" target="blank"><u>DECIDE</u></a> du <a href="http://www.lab-sticc.fr/en/index/" target="blank"><u>Lab-STICC</u></a>, est en cours de construction. De même, les résultats ici présentés sont en cours de calcul. Aussi les cartes sont mises à jour au fur et à mesure.</p>  
 
             <hr>                       
@@ -24,49 +25,205 @@
     <div class="tab-pane fade" id="definitions">
             <p>Ci-dessous sont définis les termes et indicateurs visibles sur cette plateforme et utilisés dans le cadre du projet MApUCE.</p>
             <b>Termes</b>
-                    <ul>
-                                    <li><u>Ilôt</u> : unité spatiale définie par un ensemble de parcelles qui se touchent et auxquelles ont adjoint les demi-surfaces de routes entourant cet ensemble. <i>Remarque : cet objet est aussi appelé "Unité Spatiale de Référence" : USR</i>,</li>
-                                    <li><u>Bloc</u> : ensemble de bâtiments ayant au moins un point de contact (ou une façade) en commun. Les bâtiments qui se touchent sont alors fusionnés afin de générer une nouvelle "super" géométrie : le bloc.</li>
-                    </ul>
+                <ul>
+                    <li><u>USR</u> : Unité Spatiale de Référence, définie par un ensemble de parcelles cadastrales qui se touchent et auxquelles sont adjointes les demi-surfaces de routes entourant cet ensemble,</li>
+                    <li><u>Bloc</u> : ensemble de bâtiments ayant au moins un point de contact (ou une façade) en commun. Les bâtiments qui se touchent sont alors fusionnés afin de générer une nouvelle "super" géométrie : le bloc.</li>
+                </ul>
 
             <hr>
                                 
             <b>Indicateurs par îlots</b>
-                    <ul>
-                        <li>Surfaces</li>
-                                    <ul>
-                                        <li><u>Pourcentage de surface de bâtiments</u> : Rapport entre la somme des surfaces au sol des bâtiments et la surface de l'îlot,</li>
-                                        <li><u>Pourcentage de surface de plancher</u> : Rapport entre la somme des surfaces de plancher et la surface de l'îlot. La surface de plancher d'un bâtiment est égale à la surface au sol multipliée par le nombre de niveaux du bâtiment,</li>
-                                        <li><u>Pourcentage de surface de végétation</u> : Rapport entre la somme des surfaces de végétation et la surface de l'îlot,</li>
-                                        <li><u>Pourcentage de surface de routes</u> : Rapport entre la somme des surfaces de routes et la surface de l'îlot,</li>
-                                        <li><u>Pourcentage de surface en eau</u> : Rapport entre la somme des surfaces en eau et la surface de l'îlot,</li>
-                                    </ul>
-                        <li>Formes</li>
-                                    <ul>
-                                        <li><u>Hauteur moyenne des bâtiments</u> : Moyenne des hauteurs des bâtiments présents dans l'îlot,</li>
-                                        <li><u>Volume moyen des bâtiments</u> : Moyenne des volumes des bâtiments présents dans l'îlot,</li>
-                                        <li><u>Compacité moyenne des bâtiments</u> : Moyenne des compacité des bâtiments présents dans l'îlot,</li>
-                                        <li><u>Compacité moyenne des blocs</u> : Moyenne des compacités des blocs présents dans l'îlot,</li>                                       
-                                    </ul>
-                        <li>Autres</li>
-                                    <ul>
-                                        <li><u>Nombre de bâtiments</u> : Nombre de bâtiments présents dans l'îlot,</li>
-                                        <li><u>Distance moyenne entre bâtiments</u> : Pour chaque bâtiment, nous calculons la moyenne des distances aux autres bâtiments présents dans l'îlot. Ensuite, nous calculons la moyenne de ces distances moyennes.</li>                                       
-                                    </ul>
-                    </ul>
+                <ul>
+                    <li>Surfaces</li>
+                        <ul>
+                            <li><u>Pourcentage de surface de bâtiments</u> : Rapport entre la somme des surfaces au sol des bâtiments et la surface de l'USR,</li>
+                            <li><u>Pourcentage de surface de plancher</u> : Rapport entre la somme des surfaces de plancher et la surface de l'USR. La surface de plancher d'un bâtiment est égale à la surface au sol multipliée par le nombre de niveaux du bâtiment,</li>
+                            <li><u>Pourcentage de surface de végétation</u> : Rapport entre la somme des surfaces de végétation et la surface de l'USR,</li>
+                            <li><u>Pourcentage de surface de routes</u> : Rapport entre la somme des surfaces de routes et la surface de l'USR,</li>
+                            <li><u>Pourcentage de surface en eau</u> : Rapport entre la somme des surfaces en eau et la surface de l'USR,</li>
+                        </ul>
+                    <li>Formes</li>
+                        <ul>
+                            <li><u>Hauteur moyenne des bâtiments</u> : Moyenne des hauteurs des bâtiments présents dans l'USR,</li>
+                            <li><u>Volume moyen des bâtiments</u> : Moyenne des volumes des bâtiments présents dans l'USR,</li>
+                            <li><u>Compacité moyenne des bâtiments</u> : Moyenne des compacité des bâtiments présents dans l'USR,</li>
+                            <li><u>Compacité moyenne des blocs</u> : Moyenne des compacités des blocs présents dans l'USR,</li>                                       
+                        </ul>
+                    <li>Autres</li>
+                        <ul>
+                            <li><u>Nombre de bâtiments</u> : Nombre de bâtiments présents dans l'USR,</li>
+                            <li><u>Distance moyenne entre bâtiments</u> : Pour chaque bâtiment, nous calculons la moyenne des distances aux autres bâtiments présents dans l'USR. Ensuite, nous calculons la moyenne de ces distances moyennes.</li>                                       
+                        </ul>
+                </ul>
 
             <hr>
 
             <b>Typologies</b>
-                    <ul>
-                        <li><u>Bâtiment majoritaire par ilôts</u> : dans chaque ilôts, les bâtiments sont statistiquement classés sur la base d'une soixantaine d'indicateurs morphologiques (en partie présentés ci-dessus). Cette classification (supervisée, avec la méthode du "Random Forest") permet de faire ressortir les types majoritaire et secondaire de bâti dans l'ilôt. Ici, nous présentons le type majoritaire.</li>
-                    </ul> 
+                <ul>
+                    <li><u>Bâtiment majoritaire par ilôts</u> : dans chaque USR, les bâtiments sont statistiquement classés sur la base d'une soixantaine d'indicateurs morphologiques (en partie présentés ci-dessus). Cette classification (supervisée, avec la méthode du "Random Forest") permet de faire ressortir les types majoritaire et secondaire de bâti dans l'USR. Ici, nous présentons le type majoritaire.</li>
+                </ul> 
     </div><!-- class -->
+
+    <!-- DATA ------------------------------------------------------------------------------------------------------------------------------------------ -->                        
+    <div class="tab-pane fade" id="data">                                
+            <p>Ci-dessous sont présentées les données d'USR produites dans le cadre du projet MApUCE et fournies en accès libre (licence <a href="https://opendatacommons.org/licenses/odbl/1.0/" target="blank"><u>ODbL</u></a>).</p>
+            <p>Dans chacun des fichiers .zip listés ci-dessous, vous trouverez :
+                <ul>
+                    <li>un fichier "USR_MAPUCE_xxx.geojson", couvrant l'unité urbaine "xxx" choisie,</li>
+                    <li>un fichier "<a href="./data/usr/readme.pdf" target="blank"><u>readme.pdf</u></a>" décrivant le jeu de donnée,</li>
+                    <li>un fichier "<a href="./data/usr/usr_mapuce_agglo_villes.pdf" target="blank"><u>usr_mapuce_agglo_villes.pdf</u></a>" contenant la liste des unités urbaines et communes disponibles,</li>
+                    <li>un fichier de style "<a href="./data/usr/usr_typo.sld" target="blank"><u>usr_typo.sld</u></a>" permettant de cartographier le champ "typo_maj".</li>
+                </ul>
+            </p>  
+
+            <hr>       
+
+            <!-- Style pour le tableau ci-dessous -->
+            <style type="text/css">
+            .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+            .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 16px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#ccc;color:#333;background-color:#fff;}
+            .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 16px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+            .tg .tg-baqh{text-align:center;vertical-align:top}
+            .tg .tg-yw4l{vertical-align:top}
+            @media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;}}</style>
+
+            <!-- Tableau des unités urbaines -->
+            <div class="tg-wrap"><table class="tg" align="center">
+              <tr>
+                <td class="tg-yw4l"></td>
+                <td class="tg-yw4l"><b>Unité Urbaine</b></td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">A</td>
+                <td class="tg-yw4l">
+                    <a href="./data/usr/USR_MAPUCE_Ajaccio.zip" target="blank"><u>Ajaccio</u></a>, 
+                    <a href="./data/usr/USR_MAPUCE_Albi.zip" target="blank"><u>Albi</u></a>, 
+                    <a href="./data/usr/USR_MAPUCE_Amiens.zip" target="blank"><u>Amiens</u></a>, 
+                    <a href="./data/usr/USR_MAPUCE_Angers.zip" target="blank"><u>Angers</u></a>, 
+                    <a href="./data/usr/USR_MAPUCE_Avignon.zip" target="blank"><u>Avignon</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">B</td>
+                <td class="tg-yw4l">
+                    <a href="./data/usr/USR_MAPUCE_Bayonne.zip" target="blank"><u>Bayonne</u></a>, 
+                    <a href="./data/usr/USR_MAPUCE_Belfort.zip" target="blank"><u>Belfort</u></a>, 
+                    <a href="./data/usr/USR_MAPUCE_Besancon.zip" target="blank"><u>Besançon</u></a>, 
+                    <a href="./data/usr/USR_MAPUCE_Bordeaux.zip" target="blank"><u>Bordeaux</u></a>, 
+                    <a href="./data/usr/USR_MAPUCE_Boulogne_sur_Mer.zip" target="blank"><u>Boulogne-sur-Mer</u></a>, 
+                    <a href="./data/usr/USR_MAPUCE_Brest.zip" target="blank"><u>Brest</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">C</td>
+                <td class="tg-yw4l">
+                    <a href="./data/usr/USR_MAPUCE_Caen.zip" target="blank"><u>Caen</u></a>, 
+                    <a href="./data/usr/USR_MAPUCE_Calais.zip" target="blank"><u>Calais</u></a>,
+                    <a href="./data/usr/USR_MAPUCE_Chalons_en_Champagne.zip" target="blank"><u>Chalons-en-Champagne</u></a>,
+                    <a href="./data/usr/USR_MAPUCE_Chateauroux.zip" target="blank"><u>Chateauroux</u></a>,
+                    <a href="./data/usr/USR_MAPUCE_Clermont_Ferrand.zip" target="blank"><u>Clermont-Ferrand</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">D</td>
+                <td class="tg-yw4l">
+                    <a href="./data/usr/USR_MAPUCE_Dijon.zip" target="blank"><u>Dijon</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">F</td>
+                <td class="tg-yw4l">
+                    <a href="./data/usr/USR_MAPUCE_Frejus.zip" target="blank"><u>Frejus</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">G</td>
+                <td class="tg-yw4l">
+                    <a href="./data/usr/USR_MAPUCE_Grenoble.zip" target="blank"><u>Grenoble</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">L</td>
+                <td class="tg-yw4l">
+                    <a href="./data/usr/USR_MAPUCE_La_Rochelle.zip" target="blank"><u>La Rochelle</u></a>, 
+                    <a href="./data/usr/USR_MAPUCE_Le_Havre.zip" target="blank"><u>Le Havre</u></a>,
+                    <a href="./data/usr/USR_MAPUCE_Lorient.zip" target="blank"><u>Lorient</u></a>,
+                    <a href="./data/usr/USR_MAPUCE_Lyon.zip" target="blank"><u>Lyon</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">M</td>
+                <td class="tg-yw4l">
+                    <a href="./data/usr/USR_MAPUCE_Montbeliard.zip" target="blank"><u>Montbeliard</u></a>, 
+                    <a href="./data/usr/USR_MAPUCE_Montpellier.zip" target="blank"><u>Montpellier</u></a>,
+                    <a href="./data/usr/USR_MAPUCE_Mulhouse.zip" target="blank"><u>Mulhouse</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">N</td>
+                <td class="tg-yw4l">
+                    <a href="./data/usr/USR_MAPUCE_Nancy.zip" target="blank"><u>Nancy</u></a>, 
+                    <a href="./data/usr/USR_MAPUCE_Nantes.zip" target="blank"><u>Nantes</u></a>,
+                    <a href="./data/usr/USR_MAPUCE_Nimes.zip" target="blank"><u>Nimes</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">P</td>
+                <td class="tg-yw4l">
+                    <a href="./data/usr/USR_MAPUCE_Paris.zip" target="blank"><u>Paris</u></a>, 
+                    <a href="./data/usr/USR_MAPUCE_Pau.zip" target="blank"><u>Pau</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">Q</td>
+                <td class="tg-yw4l">
+                    <a href="./data/usr/USR_MAPUCE_Quimperle.zip" target="blank"><u>Quimperlé</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">R</td>
+                <td class="tg-yw4l">
+                    <a href="./data/usr/USR_MAPUCE_Reims.zip" target="blank"><u>Reims</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">S</td>
+                <td class="tg-yw4l">
+                    <a href="./data/usr/USR_MAPUCE_Saint_Brieuc.zip" target="blank"><u>Saint-Brieuc</u></a>, 
+                    <a href="./data/usr/USR_MAPUCE_Saint_Etienne.zip" target="blank"><u>Saint-Étienne</u></a>,
+                    <a href="./data/usr/USR_MAPUCE_Saint_Nazaire.zip" target="blank"><u>Saint-Nazaire</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">T</td>
+                <td class="tg-yw4l">
+                    <a href="./data/usr/USR_MAPUCE_Toulon.zip" target="blank"><u>Toulon</u></a>, 
+                    <a href="./data/usr/USR_MAPUCE_Toulouse.zip" target="blank"><u>Toulouse</u></a>,
+                    <a href="./data/usr/USR_MAPUCE_Tours.zip" target="blank"><u>Tours</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">V</td>
+                <td class="tg-yw4l">
+                    <a href="./data/usr/USR_MAPUCE_Valence.zip" target="blank"><u>Valence</u></a>, 
+                    <a href="./data/usr/USR_MAPUCE_Valenciennes.zip" target="blank"><u>Valenciennes</u></a>,
+                    <a href="./data/usr/USR_MAPUCE_Vannes.zip" target="blank"><u>Vannes</u></a>
+                </td>
+              </tr>
+            </table>
+            </div>
+    </div><!-- class -->
+
+            
+
 
     <!-- BIBLIOGRAPHIE ------------------------------------------------------------------------------------------------------------------------------------------ -->
     <div class="tab-pane fade" id="biblio">
+            <p>Ci-dessous sont listées deux publications scientifiques présentant la chaîne de traitement mise en oeuvre pour produire ces données.</p>
+
             <ul>
-                <li>Erwan Bocher, Gwendall Petit, Nicolas Fortin, Sylvain Palominos. <i>H2GIS a spatial database to feed urban climate issues</i>. 9th International Conference on Urban Climate (<a href="http://www.meteo.fr/icuc9/index.html" target="blank"><u>ICUC9</u></a>), Jul 2015, Toulouse, France. 2015. <a href="https://halshs.archives-ouvertes.fr/halshs-01179756" target="blank">(<u>Référence</u>)</a></li>
+                <li>Bocher E., Petit G., Bernard J., Palominos S. <i>"A geoprocessing framework to compute urban indicators: The MApUCE tools chain"</i>. Urban Climate, Elsevier, 2018, 24, pp.153-174. <a href="http://dx.doi.org/10.1016/j.uclim.2018.01.008" target="blank"><u>10.1016/j.uclim.2018.01.008</u></a></li>
+                <li>Bocher E., Petit G., Fortin N., Palominos S. <i>"H2GIS a spatial database to feed urban climate issues"</i>. 9th International Conference on Urban Climate (<a href="http://www.meteo.fr/icuc9/index.html" target="blank"><u>ICUC9</u></a>), Jul 2015, Toulouse, France. 2015. <a href="https://halshs.archives-ouvertes.fr/halshs-01179756" target="blank">(<u>Référence</u>)</a></li>
             </ul>
     </div><!-- class -->
 
