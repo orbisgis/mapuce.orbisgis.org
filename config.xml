@@ -24,7 +24,7 @@
     <themes mini="true">  
     	<theme name="Zones d'études"  collapsed="false" id="zones" icon="university"> 
 
-		<layer id="mapuce:usr_lienss" name="Ilots (USR)"  visible="true" 
+		<layer id="mapuce:usr_lienss" name="USR"  visible="true" 
                 style="usr_dashstroke"
                 url="http://geoserver.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
@@ -43,7 +43,7 @@
                 metadata-csw="" />       
         
         </theme>
-        <theme name="Indicateurs par îlots"  collapsed="false" id="indicateurs" icon="group">   
+        <theme name="Indicateurs par USR"  collapsed="false" id="indicateurs" icon="group">   
           	<group name="Surfaces" id="grp1" >
 
 		<layer id="mapuce:usr_indicators_metropole_geom" name="% de surface de routes"  visible="false" 
