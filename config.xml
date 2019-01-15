@@ -2,7 +2,7 @@
 <config>
     <application title="Projet MApUCE" logo="img/logo/Logo_Mapuce_V2_small.png" help="mapuce_help.html" measuretools="true" exportpng="false" style="css/themes/peter_river.css"/>
     <!--<mapoptions projection="EPSG:2154" extent="145518,6726671,372058,6868691"  />-->
-    <mapoptions maxzoom="19" projection="EPSG:3857" center="-220750.13768758904,6144925.57790189" zoom="8" projextent="-20037508.342789244, -20037508.342789244, 20037508.342789244, 20037508.342789244" />
+    <mapoptions maxzoom="19" projection="EPSG:900913" center="-220750.13768758904,6144925.57790189" zoom="8" projextent="-20037508.342789244, -20037508.342789244, 20037508.342789244, 20037508.342789244" />
   
     <baselayers style="default"><!-- style="default"||gallery" --> 
         <baselayer  type="OSM" id="positron" label="CartoDb OSM" title="CartoDb" thumbgallery="img/basemap/positron.png" 
