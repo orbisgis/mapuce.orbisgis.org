@@ -127,7 +127,12 @@
                 style="typo_usr"
                 url="http://geoserver.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
-                metadata-csw="" />   
+                metadata-csw="" /> 
+		<layer id="mapuce:usr_lcz" name="Zones climatiques locales (LCZ)"  visible="false" 
+                style="usr_lcz"
+                url="http://geoserver.orbisgis.org/geoserver/mapuce/wms"
+                metadata=""
+                metadata-csw="" />
         </theme>
 
         <theme name="Ilôt de Chaleur Urbain (ICU)"  collapsed="true" id="icu" icon="group"> 
