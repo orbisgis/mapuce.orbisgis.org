@@ -128,6 +128,7 @@
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" /> 
+
 		<layer id="mapuce:usr_lcz" name="Zones climatiques locales (LCZ)"  visible="false" 
                 style="usr_lcz" tiled="true"
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
@@ -137,6 +138,18 @@
 
         <theme name="Ilôt de Chaleur Urbain (ICU)"  collapsed="true" id="icu" icon="group"> 
             <layer id="mapuce:icu_hot_summer" name="Paris - la nuit en été (°C)"  visible="false" 
+                style="icu_hot_summer" tiled="true"
+                url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
+                metadata=""
+                metadata-csw="" />
+
+            <layer id="mapuce:icu_hot_summer_1" name="ICU - Scénario ETE 1"  visible="false" 
+                style="icu_hot_summer" tiled="true"
+                url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
+                metadata=""
+                metadata-csw="" />
+
+            <layer id="mapuce:icu_hot_summer_2" name="ICU - Scénario ETE 2"  visible="false" 
                 style="icu_hot_summer" tiled="true"
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
