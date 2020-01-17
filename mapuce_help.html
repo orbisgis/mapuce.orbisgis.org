@@ -1,7 +1,8 @@
 <ul id="aboutTabs" class="nav nav-tabs">
         <li class="active"><a href="#about" data-toggle="tab"><i class="fa fa-question-circle"></i>&nbsp;Contexte</a></li>
         <li><a href="#definitions" data-toggle="tab"><i class="fa fa-font"></i>&nbsp;Définitions</a></li>
-        <li><a href="#data" data-toggle="tab"><i class="fa fa-database"></i>&nbsp;Données</a></li>        
+        <li><a href="#data_usr" data-toggle="tab"><i class="fa fa-database"></i>&nbsp;Données USR</a></li>
+        <li><a href="#data_icu" data-toggle="tab"><i class="fa fa-database"></i>&nbsp;Données ICU</a></li>              
         <li><a href="#biblio" data-toggle="tab"><i class="fa fa-book"></i>&nbsp;Bibliographie</a></li>
         <li><a href="#thanks" data-toggle="tab"><i class="fa fa-exclamation-circle"></i>&nbsp;Remerciements</a></li>                                      
         <li><a href="#disclaimer" data-toggle="tab"><i class="fa fa-envelope"></i>&nbsp;Mention légale</a></li>                            
@@ -67,12 +68,12 @@
 
             <b>Ilôt de Chaleur Urbain (ICU)</b>
                 <ul>
-                    <li><u>Paris - Été canicule</u> : Cette couche représente l'îlot de chaleur urbain (ICU) sur la zone de Paris. Il s'agit ici d'une modélisation faite à l'aide du modèle <a href="http://www.umr-cnrm.fr/spip.php?article199&lang=fr" target="blank"><u>TEB</u></a> et dont le résultat, exprimé en kelvin, montre l'effet de l'agglomération de Paris sur la température nocturne pendant une situation estivale propice à un fort îlot de chaleur urbain.</li>
+                    <li><u>ICU - Scénario ETE 1 et 2</u> : Ces deux couches représentent l'îlot de chaleur urbain (ICU) calculé sur une Unité Urbaine (UU) d'étude. Il s'agit ici d'une modélisation faite à l'aide du modèle <a href="http://www.umr-cnrm.fr/spip.php?article199&lang=fr" target="blank"><u>TEB</u></a> et dont le résultat, exprimé en kelvin, montre l'effet de l'UU sur la température nocturne pendant une situation estivale propice à un fort îlot de chaleur urbain. Deux configurations de temps (scénarios) sont proposées pour chacune des UU. Pour en savoir plus, reportez vous à la documentation disponible <a href="./data/icu/ICU_Description.pdf" target="blank"><u>ICI</u></a> (voir l'onglet "<a href="#data_icu" data-toggle="tab"><i class="fa fa-database"></i>Données ICU</a>").</li>
                 </ul>                 
     </div><!-- class -->
 
     <!-- DATA ------------------------------------------------------------------------------------------------------------------------------------------ -->                        
-    <div class="tab-pane fade" id="data">                                
+    <div class="tab-pane fade" id="data_usr">                                
             <p>Ci-dessous sont présentées les données d'USR produites dans le cadre du projet MApUCE et fournies en accès libre (licence <a href="https://opendatacommons.org/licenses/odbl/1.0/" target="blank"><u>ODbL</u></a>).</p>
             <p>Dans chacun des fichiers .zip listés ci-dessous, vous trouverez :
                 <ul>
@@ -215,6 +216,158 @@
                     <a href="./data/usr/USR_MAPUCE_Valence.zip" target="blank"><u>Valence</u></a>, 
                     <a href="./data/usr/USR_MAPUCE_Valenciennes.zip" target="blank"><u>Valenciennes</u></a>,
                     <a href="./data/usr/USR_MAPUCE_Vannes.zip" target="blank"><u>Vannes</u></a>
+                </td>
+              </tr>
+            </table>
+            </div>
+    </div><!-- class -->
+
+
+    <!-- DATA ------------------------------------------------------------------------------------------------------------------------------------------ -->                        
+    <div class="tab-pane fade" id="data_icu">                                
+            <p>Ci-dessous sont présentées les données d'Ilôt de Chaleur Urbain (ICU) produites dans le cadre du projet MApUCE et fournies en accès libre (licence <a href="https://opendatacommons.org/licenses/odbl/1.0/" target="blank"><u>ODbL</u></a>).</p>
+            <p>Dans chacun des fichiers .zip listés ci-dessous, vous trouverez :
+                <ul>
+                    <li>un fichier "xxx_icu_hot_summer_1.shp", couvrant l'unité urbaine "xxx" choisie pour la configuration de temps n°1,</li>
+                    <li>un fichier "xxx_icu_hot_summer_2.shp", couvrant l'unité urbaine "xxx" choisie pour la configuration de temps n°2,</li>
+                    <li>un fichier "<a href="./data/icu/ICU_Description.pdf" target="blank"><u>ICU_Description.pdf</u></a>" décrivant le jeu de donnée ainsi que l'ensemble des configurations de temps en fonction des unités urbaines,</li>
+                    <li>un fichier de style "<a href="./data/icu/icu_hot_summer.sld" target="blank"><u>icu_hot_summer.sld</u></a>" permettant de cartographier le champ "temp".</li>
+                </ul>
+            </p>  
+
+            <hr>       
+
+            <!-- Style pour le tableau ci-dessous -->
+            <style type="text/css">
+            .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+            .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 16px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#ccc;color:#333;background-color:#fff;}
+            .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 16px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+            .tg .tg-baqh{text-align:center;vertical-align:top}
+            .tg .tg-yw4l{vertical-align:top}
+            @media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;}}</style>
+
+            <!-- Tableau des unités urbaines -->
+            <div class="tg-wrap"><table class="tg" align="center">
+              <tr>
+                <td class="tg-yw4l"></td>
+                <td class="tg-yw4l"><b>Unité Urbaine</b></td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">A</td>
+                <td class="tg-yw4l">
+                    <a href="./data/icu/Amiens_icu_hot_summer.zip" target="blank"><u>Amiens</u></a>, 
+                    <a href="./data/icu/Angers_icu_hot_summer.zip" target="blank"><u>Angers</u></a>, 
+                    <a href="./data/icu/Arras_icu_hot_summer.zip" target="blank"><u>Arras</u></a>, 
+                    <a href="./data/icu/Avignon_icu_hot_summer.zip" target="blank"><u>Avignon</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">B</td>
+                <td class="tg-yw4l">
+                    <a href="./data/icu/Bayonne_icu_hot_summer.zip" target="blank"><u>Bayonne</u></a>, 
+                    <a href="./data/icu/Beauvais_icu_hot_summer.zip" target="blank"><u>Beauvais</u></a>, 
+                    <a href="./data/icu/Belfort_icu_hot_summer.zip" target="blank"><u>Belfort</u></a>, 
+                    <a href="./data/icu/Besancon_icu_hot_summer.zip" target="blank"><u>Besançon</u></a>, 
+                    <a href="./data/icu/Bethune_icu_hot_summer.zip" target="blank"><u>Bethune</u></a>, 
+                    <a href="./data/icu/Bordeaux_icu_hot_summer.zip" target="blank"><u>Bordeaux</u></a>, 
+                    <a href="./data/icu/Boulogne_sur_mer_icu_hot_summer.zip" target="blank"><u>Boulogne-sur-Mer</u></a>
+                    
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">C</td>
+                <td class="tg-yw4l">
+                    <a href="./data/icu/Caen_icu_hot_summer.zip" target="blank"><u>Caen</u></a>, 
+                    <a href="./data/icu/Calais_icu_hot_summer.zip" target="blank"><u>Calais</u></a>, 
+                    <a href="./data/icu/Chalon_sur_saone_icu_hot_summer.zip" target="blank"><u>Chalons-sur-Saone</u></a>, 
+                    <a href="./data/icu/Clermont_Ferrand_icu_hot_summer.zip" target="blank"><u>Clermont-Ferrand</u></a>, 
+                    <a href="./data/icu/Colmar_icu_hot_summer.zip" target="blank"><u>Colmar</u></a>, 
+                    <a href="./data/icu/Compiegne_icu_hot_summer.zip" target="blank"><u>Compiègne</u></a>, 
+                    <a href="./data/icu/Creil_icu_hot_summer.zip" target="blank"><u>Creil</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">D</td>
+                <td class="tg-yw4l">
+                    <a href="./data/icu/Dijon_icu_hot_summer.zip" target="blank"><u>Dijon</u></a>, 
+                    <a href="./data/icu/Douai_Lens_icu_hot_summer.zip" target="blank"><u>Bouai - Lens</u></a>, 
+                    <a href="./data/icu/Dunkerque_icu_hot_summer.zip" target="blank"><u>Dunkerque</u></a>, 
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">G</td>
+                <td class="tg-yw4l">
+                    <a href="./data/icu/Grenoble_icu_hot_summer.zip" target="blank"><u>Grenoble</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">L</td>
+                <td class="tg-yw4l">
+                    <a href="./data/icu/La_Rochelle_icu_hot_summer.zip" target="blank"><u>La Rochelle</u></a>, 
+                    <a href="./data/icu/Le_Havre_icu_hot_summer.zip" target="blank"><u>Le Havre</u></a>, 
+                    <a href="./data/icu/Lille_icu_hot_summer.zip" target="blank"><u>Lille</u></a>, 
+                    <a href="./data/icu/Lorient_icu_hot_summer.zip" target="blank"><u>Lorient</u></a>, 
+                    <a href="./data/icu/Lyon_icu_hot_summer.zip" target="blank"><u>Lyon</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">M</td>
+                <td class="tg-yw4l">
+                    <a href="./data/icu/Metz_icu_hot_summer.zip" target="blank"><u>Metz</u></a>, 
+                    <a href="./data/icu/Montbeliard_icu_hot_summer.zip" target="blank"><u>Montbeliard</u></a>, 
+                    <a href="./data/icu/Montpellier_icu_hot_summer.zip" target="blank"><u>Montpellier</u></a>,
+                    <a href="./data/icu/Mulhouse_icu_hot_summer.zip" target="blank"><u>Mulhouse</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">N</td>
+                <td class="tg-yw4l">
+                    <a href="./data/icu/Nancy_icu_hot_summer.zip" target="blank"><u>Nancy</u></a>, 
+                    <a href="./data/icu/Nantes_icu_hot_summer.zip" target="blank"><u>Nantes</u></a>,
+                    <a href="./data/icu/Nice_icu_hot_summer.zip" target="blank"><u>Nice</u></a>, 
+                    <a href="./data/icu/Nimes_icu_hot_summer.zip" target="blank"><u>Nimes</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">O</td>
+                <td class="tg-yw4l">
+                    <a href="./data/icu/Orleans_icu_hot_summer.zip" target="blank"><u>Orléans</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">P</td>
+                <td class="tg-yw4l">
+                    <a href="./data/icu/Paris_icu_hot_summer.zip" target="blank"><u>Paris</u></a>, 
+                    <a href="./data/icu/Pau_icu_hot_summer.zip" target="blank"><u>Pau</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">R</td>
+                <td class="tg-yw4l">
+                    <a href="./data/icu/Reims_icu_hot_summer.zip" target="blank"><u>Reims</u></a>, 
+                    <a href="./data/icu/Rouen_icu_hot_summer.zip" target="blank"><u>Rouen</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">S</td>
+                <td class="tg-yw4l">
+                    <a href="./data/icu/Saint_Etienne_icu_hot_summer.zip" target="blank"><u>Saint-Étienne</u></a>,
+                    <a href="./data/icu/Saint_Nazaire_icu_hot_summer.zip" target="blank"><u>Saint-Nazaire</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">T</td>
+                <td class="tg-yw4l">
+                    <a href="./data/icu/Thionville_icu_hot_summer.zip" target="blank"><u>Thionville</u></a>, 
+                    <a href="./data/icu/Toulon_icu_hot_summer.zip" target="blank"><u>Toulon</u></a>, 
+                    <a href="./data/icu/Toulouse_icu_hot_summer.zip" target="blank"><u>Toulouse</u></a>,
+                    <a href="./data/icu/Tours_icu_hot_summer.zip" target="blank"><u>Tours</u></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">V</td>
+                <td class="tg-yw4l">
+                    <a href="./data/icu/Valencienne_icu_hot_summer.zip" target="blank"><u>Valenciennes</u></a>
                 </td>
               </tr>
             </table>
