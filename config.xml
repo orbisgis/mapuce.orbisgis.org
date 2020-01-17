@@ -137,12 +137,6 @@
         </theme>
 
         <theme name="Ilôt de Chaleur Urbain (ICU)"  collapsed="true" id="icu" icon="group"> 
-            <layer id="mapuce:icu_hot_summer" name="Paris - la nuit en été (°C)"  visible="false" 
-                style="icu_hot_summer" tiled="true"
-                url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
-                metadata=""
-                metadata-csw="" />
-
             <layer id="mapuce:icu_hot_summer_1" name="ICU - Scénario ETE 1"  visible="false" 
                 style="icu_hot_summer" tiled="true"
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
