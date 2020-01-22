@@ -6,7 +6,7 @@
     <!--<mapoptions maxzoom="19" projection="EPSG:900913" center="-220750.13768758904,6144925.57790189" zoom="8" projextent="-20037508.342789244, -20037508.342789244, 20037508.342789244, 20037508.342789244" />-->
 
     <!-- Pour une projection en Lambert 93 -->
-    <mapoptions maxzoom="18" projection="EPSG:2154" center="673057,6627485" zoom="8" projextent="145518,6726671,372058,6868691" />
+    <mapoptions maxzoom="18" projection="EPSG:2154" center="673057,6627485" zoom="8" projextent="135140.1875, 6102349, 1183896.125, 7108039.5" />
 	
 	
     <baselayers style="default"><!-- style="default"||gallery" --> 
