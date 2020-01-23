@@ -3,11 +3,7 @@
     <application title="Projet MApUCE" logo="img/logo/Logo_Mapuce_V2_small.png" help="mapuce_help.html" measuretools="true" exportpng="false" style="css/themes/peter_river.css"/>
     <!--<mapoptions projection="EPSG:2154" extent="145518,6726671,372058,6868691"  />-->
     <!-- Pour une projection Google -->
-    <mapoptions maxzoom="19" projection="EPSG:900913" center="-220750.13768758904,6144925.57790189" zoom="8" projextent="-20037508.342789244, -20037508.342789244, 20037508.342789244, 20037508.342789244" />
-
-    <!-- Pour une projection en Lambert 93 -->
-    <!-- <mapoptions maxzoom="18" projection="EPSG:2154" center="489353.59, 6587552.20" zoom="8" projextent="-378305.81, 6093283.21, 1212610.74, 7186901.68" />-->
-	
+    <mapoptions maxzoom="18" projection="EPSG:3857" center="-403013.39038929436,6128402.399153711" zoom="8" projextent="-20037508.342789244, -20037508.342789244, 20037508.342789244, 20037508.342789244" />
 	
     <baselayers style="default"><!-- style="default"||gallery" --> 
         <baselayer  type="OSM" id="positron" label="CartoDb OSM" title="CartoDb" thumbgallery="img/basemap/positron.png" 
@@ -26,22 +22,22 @@
        <!--<widget name="gauge"/>-->       
     </widgets> 
 
-    <themes mini="true">  
+        <themes mini="true">  
     	<theme name="Zones d'études"  collapsed="false" id="zones" icon="university"> 
 
-		<layer id="mapuce:usr" name="USR"  visible="true" 
+            <layer id="mapuce:usr_3857" name="USR"  visible="true" 
                 style="usr_dashstroke" tiled="true"
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" />
 
-		<layer id="mapuce:urban_areas_status" name="Communes analysées"  visible="true" 
+            <layer id="mapuce:urban_areas_status" name="Communes analysées"  visible="true" 
                 style="" tiled="true"
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" />
 
-		<layer id="mapuce:unites_urbaines" name="Unités urbaines"  visible="true" 
+            <layer id="mapuce:unites_urbaines_3857" name="Unités urbaines"  visible="true" 
                 style="unites_urbaines" tiled="true"
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
@@ -51,31 +47,31 @@
         <theme name="Indicateurs par USR"  collapsed="false" id="indicateurs" icon="group">   
           	<group name="Surfaces" id="grp1" >
 
-		<layer id="mapuce:usr_indicators_metropole_geom" name="% de surface de routes"  visible="false" 
+		    <layer id="mapuce:usr_indicators_metropole_geom_3857" name="% de surface de routes"  visible="false" 
                 style="usr_road_dens" tiled="true"
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" />
 
-		<layer id="mapuce:usr_indicators_metropole_geom" name="% de surface en eau"  visible="false" 
+            <layer id="mapuce:usr_indicators_metropole_geom_3857" name="% de surface en eau"  visible="false" 
                 style="usr_eau_dens" tiled="true"
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" /> 
 
-		<layer id="mapuce:usr_indicators_metropole_geom" name="% de surface de végétation"  visible="false" 
+            <layer id="mapuce:usr_indicators_metropole_geom_3857" name="% de surface de végétation"  visible="false" 
                 style="usr_veget_dens" tiled="true"
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" /> 
 
-		<layer id="mapuce:usr_indicators_metropole_geom" name="% de surface de plancher"  visible="false" 
+            <layer id="mapuce:usr_indicators_metropole_geom_3857" name="% de surface de plancher"  visible="false" 
                 style="usr_floor_ratio" tiled="true"
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" /> 
 
-		<layer id="mapuce:usr_indicators_metropole_geom" name="% de surface de bâtiments"  visible="false" 
+            <layer id="mapuce:usr_indicators_metropole_geom_3857" name="% de surface de bâtiments"  visible="false" 
                 style="usr_build_dens" tiled="true"
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
@@ -85,25 +81,25 @@
 
 		<group name="Formes" id="grp2" >
 
-		<layer id="mapuce:usr_indicators_metropole_geom" name="Compacité moyenne des blocs"  visible="false" 
+		    <layer id="mapuce:usr_indicators_metropole_geom_3857" name="Compacité moyenne des blocs"  visible="false" 
                 style="usr_b_m_w_compacity" tiled="true"
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" /> 
 
-		<layer id="mapuce:usr_indicators_metropole_geom" name="Compacité moyenne des bâtiments"  visible="false" 
+		    <layer id="mapuce:usr_indicators_metropole_geom_3857" name="Compacité moyenne des bâtiments"  visible="false" 
                 style="usr_compac_mean_w" tiled="true"
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" /> 
 
-		<layer id="mapuce:usr_indicators_metropole_geom" name="Volume moyen des bâtiments"  visible="false" 
+		    <layer id="mapuce:usr_indicators_metropole_geom_3857" name="Volume moyen des bâtiments"  visible="false" 
                 style="usr_b_vol_mean" tiled="true"
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" /> 
 
-		<layer id="mapuce:usr_indicators_metropole_geom" name="Hauteur moyenne des bâtiments"  visible="false" 
+		    <layer id="mapuce:usr_indicators_metropole_geom_3857" name="Hauteur moyenne des bâtiments"  visible="false" 
                 style="usr_h_mean" tiled="true"
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
@@ -113,28 +109,29 @@
 
  		<group name="Autres" id="grp3" >	  
 
-		<layer id="mapuce:usr_indicators_metropole_geom" name="Nombre de bâtiments"  visible="false" 
+		    <layer id="mapuce:usr_indicators_metropole_geom_3857" name="Nombre de bâtiments"  visible="false" 
                 style="usr_build_num_prop_point" tiled="true"
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" />
 
-		<layer id="mapuce:usr_indicators_metropole_geom" name="Distance moyenne entre bâtiments"  visible="false" 
+		    <layer id="mapuce:usr_indicators_metropole_geom_3857" name="Distance moyenne entre bâtiments"  visible="false" 
                 style="usr_mean_m_dist" tiled="true"
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" />   
 
             	</group>
-        </theme>                    
+        </theme>
+
         <theme name="Typologies"  collapsed="true" id="typologie" icon="group"> 
-          	<layer id="mapuce:typo_usr_geom" name="Bâtiment majoritaire par îlots"  visible="false" 
+          	<layer id="mapuce:typo_usr_geom_3857" name="Bâtiment majoritaire par îlots"  visible="false" 
                 style="typo_usr" tiled="true"
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" /> 
 
-		<layer id="mapuce:usr_lcz" name="Zones climatiques locales (LCZ)"  visible="false" 
+		    <layer id="mapuce:usr_lcz_3857" name="Zones climatiques locales (LCZ)"  visible="false" 
                 style="usr_lcz" tiled="true"
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
@@ -142,13 +139,13 @@
         </theme>
 
         <theme name="Ilôt de Chaleur Urbain (ICU)"  collapsed="true" id="icu" icon="group"> 
-            <layer id="mapuce:icu_hot_summer_1" name="ICU - Scénario ETE 1"  visible="false" 
+            <layer id="mapuce:icu_hot_summer_1_3857" name="ICU - Scénario ETE 1"  visible="false" 
                 style="icu_hot_summer" tiled="false"
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
                 metadata-csw="" />
 
-            <layer id="mapuce:icu_hot_summer_2" name="ICU - Scénario ETE 2"  visible="false" 
+            <layer id="mapuce:icu_hot_summer_2_3857" name="ICU - Scénario ETE 2"  visible="false" 
                 style="icu_hot_summer" tiled="false"
                 url="https://geoclimate.orbisgis.org/geoserver/mapuce/wms"
                 metadata=""
