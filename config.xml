@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-    <application title="Projet MApUCE" logo="img/logo/Logo_Mapuce_V2_small.png" help="mapuce_help.html" measuretools="true" exportpng="false" style="css/themes/peter_river.css"/>
+    <application title="Projet MApUCE" logo="img/logo/Logo_Mapuce_V2_small.png" help="mapuce_help.html" showhelp="true" measuretools="true" exportpng="false" style="css/themes/peter_river.css"/>
     <!--<mapoptions projection="EPSG:2154" extent="145518,6726671,372058,6868691"  />-->
     <!-- Pour une projection Google -->
     <mapoptions maxzoom="18" projection="EPSG:3857" center="274440,5866685" zoom="7" projextent="-20037508.342789244, -20037508.342789244, 20037508.342789244, 20037508.342789244" />
