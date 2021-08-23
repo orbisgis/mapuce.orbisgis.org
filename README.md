@@ -11,7 +11,7 @@ MApUCE project has been originally developed within the [MApUCE](https://anr.fr/
 
 **Due to OVH incident the mapuce.orbisgis.org is no longer available.**
 
-Please go to [monitoring.orbigis.org](monitoring.orbigis.org) to view the data processed and published by the OrbisGIS team throughout their research projects. 
+Please go to [monitoring.orbisgis.org](http://monitoring.orbisgis.org/) to view the data processed and published by the OrbisGIS team throughout their research projects. 
 
 
 ## Note that the GIS part of the MApUCE project moves forward with a new methodology and a new tool called [GeoClimate](https://github.com/orbisgis/geoclimate)
